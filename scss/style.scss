@@ -1,0 +1,130 @@
+@import 'vars';
+@import 'reset';
+@import 'global';
+
+body {
+    background-color: #fdf7c2;
+}
+
+.calc-box {
+
+    .number {
+        font-size: 24px;
+        width: 60px;
+        height: 60px;
+        @extend %defstyles;
+        transition:width .3s; 
+        ::selection {
+            background: transparent;
+        }
+        &:hover {
+            background-color: #fdf7c2;
+        }
+
+
+    }
+
+    .Eq {
+        background-color: $def;
+        color: white;
+        font-size: 24px;
+        width: 60px;
+        height: 60px;
+        @extend %defstyles;
+        transition: .3s;
+
+        &:hover {
+            background-color: #b41f44;
+            border: #b41f44;
+        }
+    }
+
+
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .calc {
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 0px 18px 5px rgba(34, 60, 80, 0.2);
+        border: 3px solid #A6495A;
+        border-radius: 10px;
+
+        .calc-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .ce {
+            height: 45px;
+            width: 45px;
+            margin: 20px 0px 0px 20px;
+            @extend %defstyles;
+            ::selection {
+                background: transparent;
+            }
+        }
+
+        .result {
+            position: relative;
+            font-size: 30px;
+            margin: 20px 20px 0px 20px;
+            width: 200px;
+            height: 45px;
+            border: 3px solid $def;
+            border-radius: 5px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            padding: 10px;
+            transition: .5s;
+
+            &::after {
+                content: '';
+                position: absolute;
+                height: 3px;
+                width: 306px;
+                background-color: $def;
+                top: 55px;
+                right: -23px;
+                transition: .5s;
+            }
+
+            &.red:after {
+                width: 406px;
+            }
+
+            h4 {
+                font-weight: normal;
+            }
+        }
+
+        .numbers {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        &__grid-wrapper {
+            min-width: 300px;
+            display: flex;
+            margin: 20px 0px;
+            padding-top: 10px;
+            justify-content: center;
+            align-items: center;
+            transition: .001s;
+        }
+
+        .actions {
+            display: grid;
+            margin-left: 10px;
+            row-gap: 10px;
+            width: 60px;
+        }
+    }
+}

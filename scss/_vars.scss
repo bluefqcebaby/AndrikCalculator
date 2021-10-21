@@ -1,0 +1,11 @@
+$def:#A6495A;
+
+%defstyles {
+    border: 3px solid $def;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
